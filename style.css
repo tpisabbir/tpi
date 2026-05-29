@@ -1,0 +1,568 @@
+    /* extra subtle styling for consistency */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+    }
+
+    /* --- NEW: Logo styling (added without breaking anything) --- */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      letter-spacing: -0.3px;
+    }
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      border-radius: 10px;
+    }
+    @media (max-width: 576px) {
+      .brand-logo { height: 32px; }
+      .navbar-brand { font-size: 1.2rem; }
+    }
+    /* --- END Logo styling --- */
+
+    .navbar-brand span {
+      color: #f5b042;
+    }
+
+    .btn-custom {
+      background: #1e5a6f;
+      color: white;
+      border-radius: 40px;
+      padding: 8px 22px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-custom:hover {
+      background: #134652;
+      color: white;
+    }
+
+    .hero-icon {
+      font-size: 4rem;
+      color: #1e5a6f;
+      opacity: 0.85;
+    }
+
+    .card-hover {
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .result-link-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .result-link-card .card {
+      transition: 0.2s;
+    }
+
+    .result-link-card:hover .card {
+      background: #fef9e6;
+      border-left: 4px solid #f5b042;
+    }
+
+    .notice-item {
+      background: white;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      border-left: 5px solid #f5b042;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: 0.1s;
+    }
+
+    .footer-info {
+      background: #0f2c34;
+      color: #e9ecef;
+      border-top: 3px solid #f5b042;
+    }
+
+    .footer-teacher p {
+      font-size: 0.95rem;
+    }
+
+    .curriculum-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .curriculum-list li {
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed #dee2e6;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .curriculum-list li i {
+      color: #f5b042;
+      width: 24px;
+      margin-top: 4px;
+    }
+
+    .software-tag {
+      background: #eef2f5;
+      padding: 12px 18px;
+      border-radius: 40px;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .software-tag i {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      display: block;
+      color: #1e5a6f;
+    }
+
+    /* Teacher Card specific styling */
+    .teacher-card-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #f5b042;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .teacher-card-img:hover {
+      transform: scale(1.02);
+    }
+
+    .calendar-mini {
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+    }
+
+    .badge-teacher {
+      background: #1e5a6f10;
+      color: #1e5a6f;
+      font-weight: 500;
+    }
+ /* page container – elegant max-width */
+    .teachers-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* header section with menu-bar inspiration */
+    .department-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .dept-badge {
+      display: inline-block;
+      background: #0f2b3d;
+      color: #facc15;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1e3c4c, #2b5e6e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.01em;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #334155;
+      margin-top: 0.5rem;
+      border-bottom: 2px solid rgba(100,116,139,0.2);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Grid system – responsive cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      perspective: 800px;
+    }
+
+    /* modern card design with glassmorphism + soft shadows */
+    .teacher-card {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(0px);
+      border-radius: 2rem;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255,255,255,0.5);
+      position: relative;
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 30px 45px -18px rgba(0, 0, 0, 0.2);
+      border-color: rgba(250, 204, 21, 0.4);
+      background: white;
+    }
+
+    /* decorative top accent */
+    .card-accent {
+      height: 8px;
+      background: linear-gradient(90deg, #facc15, #f59e0b, #facc15);
+      width: 100%;
+    }
+
+    /* avatar / icon section */
+    .card-avatar {
+      text-align: center;
+      padding: 1.8rem 1.5rem 0.8rem 1.5rem;
+    }
+
+    .avatar-icon {
+      background: linear-gradient(145deg, #eef2ff, #e2e8f0);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 20px -12px rgba(0,0,0,0.2);
+      border: 3px solid white;
+    }
+
+    .avatar-icon i {
+      font-size: 3rem;
+      color: #1e4a5f;
+    }
+
+    .teacher-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 1rem;
+      color: #0c4a6e;
+      letter-spacing: -0.2px;
+      line-height: 1.3;
+      padding: 0 0.5rem;
+    }
+
+    .teacher-dept {
+      display: inline-block;
+      background: #fef9e3;
+      color: #b45309;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      margin-top: 0.4rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* card body with details */
+    .card-details {
+      padding: 1.2rem 1.5rem 1.5rem;
+      border-top: 1px solid #eef2ff;
+      margin-top: 0.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      word-break: break-word;
+    }
+
+    .info-row i {
+      width: 1.6rem;
+      font-size: 1rem;
+      color: #f59e0b;
+      text-align: center;
+    }
+
+    .info-row span {
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .info-row a {
+      color: #0f5c6b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .info-row a:hover {
+      color: #f59e0b;
+      text-decoration: underline;
+    }
+
+    .badge-room {
+      background: #eef2ff;
+      border-radius: 20px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #155e75;
+      margin-left: 0.25rem;
+    }
+
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 0.75rem;
+      background: #f8fafc;
+      padding: 0.7rem 1rem;
+      border-radius: 1rem;
+      gap: 0.5rem;
+    }
+
+    .contact-item {
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .contact-item i {
+      font-size: 0.7rem;
+      color: #f59e0b;
+    }
+
+    .email-domain {
+      font-size: 0.7rem;
+      color: #475569;
+    }
+
+    /* footer note */
+    .footer-note {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #475569;
+      border-top: 1px solid #cbd5e1;
+      padding-top: 2rem;
+    }
+
+    /* menubar simulation snippet (optional style) */
+    .menu-bar-mock {
+      background: #0f2b3d;
+      padding: 0.75rem 2rem;
+      border-radius: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      max-width: 500px;
+      margin: 0 auto 2rem auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .menu-bar-mock a {
+      color: #facc15;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .menu-bar-mock a:hover {
+      color: white;
+    }
+    .menu-bar-mock .active {
+      border-bottom: 2px solid #facc15;
+      padding-bottom: 4px;
+    }
+
+/* -------- NEW BEAUTIFUL FACULTIES CARDS SECTION (placed center of homepage) -------- */
+.faculties-section {
+  margin: 3rem 0 2rem;
+}
+.faculties-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.faculties-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(125deg, #1e4a5f, #f5b042);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+}
+.faculties-title p {
+  color: #4b5563;
+  font-weight: 500;
+}
+.faculty-card-wrapper {
+  transition: all 0.25s ease;
+}
+.faculty-card {
+  background: white;
+  border-radius: 2rem;
+  padding: 1.8rem 1rem;
+  text-align: center;
+  box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.3s;
+  border: 1px solid rgba(245,176,66,0.2);
+  height: 100%;
+  cursor: default;
+}
+.faculty-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 40px -18px rgba(0,0,0,0.2);
+  border-color: #f5b042;
+  background: #ffffff;
+}
+.faculty-icon {
+  font-size: 3rem;
+  background: linear-gradient(145deg, #fef9e6, #fff2df);
+  width: 85px;
+  height: 85px;
+  line-height: 85px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: 0.2s;
+}
+.faculty-card:hover .faculty-icon {
+  background: #f5b04220;
+  transform: scale(1.02);
+}
+.faculty-icon i {
+  color: #1e5a6f;
+  font-size: 2.7rem;
+}
+.faculty-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1e3c4c;
+}
+.faculty-desc {
+  font-size: 0.85rem;
+  color: #5b6e8c;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+.faculty-badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #1e5a6f;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.9rem;
+  margin-top: 0.8rem;
+}
+/* responsive */
+@media (max-width: 768px) {
+  .faculty-name { font-size: 1.2rem; }
+  .faculty-icon { width: 70px; height: 70px; }
+  .faculty-icon i { font-size: 2.2rem; }
+}
+
+/* --- NEW: Image Slider Styles (added above faculties section) --- */
+.image-slider-section {
+  margin: 2rem 0 1.5rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12);
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.slider-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slider-img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  height: 300px;
+  display: block;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+.slider-btn:hover {
+  background: #f5b042;
+  color: #1e3c4c;
+}
+.btn-prev { left: 20px; }
+.btn-next { right: 20px; }
+.slider-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 5;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dot.active-dot {
+  background: #f5b042;
+  transform: scale(1.2);
+  width: 12px;
+  height: 12px;
+}
+@media (max-width: 768px) {
+  .slider-img { height: 250px; }
+  .slider-btn { width: 36px; height: 36px; font-size: 1rem; }
+}
+/* --- END Image Slider Styles --- */

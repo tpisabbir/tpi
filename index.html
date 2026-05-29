@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <!-- Google Fonts & simple reset for clean modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Thakurgaon Polytechnic Institute | CST Department</title>
+  <!-- Bootstrap 5 CSS + Icons + Google Fonts (all CDN, no extra files) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap"
+    rel="stylesheet">
+    
+
+</head>
+
+<body>
+
+  <!-- ======================= NAVBAR / MENU ======================= -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <!-- NEW: Logo added next to institute name -->
+        <img class="brand-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231e5a6f'/%3E%3Ctext x='50' y='67' font-size='44' text-anchor='middle' fill='%23f5b042' font-weight='bold' font-family='Arial'%3ETPI%3C/text%3E%3C/svg%3E" alt="TPI Logo">
+        Thakurgaon Polytechnic<span class="text-warning"> Institute</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item"><a class="nav-link active" href="#" data-page="home">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="teacher">👨‍🏫 Teacher</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="student">📚 Student</a></li>
+          <!-- TWO NEW MENU ITEMS: Course Structure + Software -->
+          <li class="nav-item"><a class="nav-link" href="#" data-page="coursestructure">📖 Course Structure</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="software">💻 Software</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="classtest">📄 Class-Test-Result</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="midterm">📑 Midterm-Result</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="semester">🎓 Semester-Result</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="notice">📢 Notice</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================= MAIN CONTENT ======================= -->
+  <div class="container page-content mt-4 mb-5">
+    <!-- HOME PAGE (with improved calendar widget + NEW FACULTIES CARDS SECTION + NEW IMAGE SLIDER) -->
+    <div id="homePage" class="page-section">
+      <div class="hero-section">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 class="display-5 fw-bold">Welcome to <span class="text-warning">CST Department</span></h1>
+            <p class="lead mt-3">Excellence in Computer Science & Technology | Shaping Future IT Leaders</p>
+            <p class="mt-2">Thakurgaon Polytechnic Institute offers world-class diploma programs with industry-oriented
+              curriculum. Our department focuses on innovation, research, and practical skills.</p>
+            <a href="#" data-page="notice" class="btn btn-custom mt-2 me-2 nav-link-trigger"><i
+                class="fas fa-bullhorn"></i> Latest Notice</a>
+            <a href="#" data-page="midterm" class="btn btn-outline-secondary mt-2 nav-link-trigger"><i
+                class="fas fa-file-pdf"></i> Midterm Results</a>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="fas fa-laptop-code hero-icon"></i>
+            <i class="fas fa-microchip ms-3 hero-icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== NEW IMAGE SLIDER SECTION (Above Explore Our Faculties) ========== -->
+      <div class="image-slider-section">
+        <div class="slider-container">
+          <div class="slider-images" id="sliderImages">
+            <img class="slider-img" src="image/s1.jpg" alt="Campus">
+            <img class="slider-img" src="image/salaider1.jpeg" alt="Students">
+            <img class="slider-img" src="image/salaider2.jpeg" alt="Tech Lab">
+            <img class="slider-img" src="image/salaider3.jpg" alt="Workshop">
+            <img class="slider-img" src="image/salaider5.jpeg" alt="Workshop">
+            <img class="slider-img" src="image/salaider3.jpg" alt="Workshop">
+          </div>
+          <button class="slider-btn btn-prev" id="prevSlideBtn"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-btn btn-next" id="nextSlideBtn"><i class="fas fa-chevron-right"></i></button>
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </div>
+
+      <!-- ========== NEW BEAUTIFUL FACULTIES SECTION (MIDDLE OF HOMEPAGE) ========== -->
+      <div class="faculties-section">
+        <div class="faculties-title">
+          <h2><i class="fas fa-university me-2"></i> Explore Our Faculties</h2>
+          <p>Distinct departments driving innovation & excellence</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Computer Science & Technology -->
+          <div class="col-md-6 col-lg-4 faculty-card-wrapper">
+            <div class="faculty-card">
+              <div class="faculty-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="faculty-name">Computer Science & Technology</div>
+              <div class="faculty-desc">Cutting-edge programs in software dev, AI, web technologies & networking.</div>
+              <span class="faculty-badge"><i class="fas fa-microchip"></i> CST</span>
+            </div>
+          </div>
+          <!-- Mechatronics -->
+          <div class="col-md-6 col-lg-4 faculty-card-wrapper">
+            <div class="faculty-card">
+              <div class="faculty-icon"><i class="fas fa-robot"></i></div>
+              <div class="faculty-name">Mechatronics Engineering</div>
+              <div class="faculty-desc">Integration of mechanical, electronics & robotics for modern automation.</div>
+              <span class="faculty-badge"><i class="fas fa-cogs"></i> MTE</span>
+            </div>
+          </div>
+          <!-- Food Technology -->
+          <div class="col-md-6 col-lg-4 faculty-card-wrapper">
+            <div class="faculty-card">
+              <div class="faculty-icon"><i class="fas fa-apple-alt"></i></div>
+              <div class="faculty-name">Food Technology</div>
+              <div class="faculty-desc">Food processing, quality control & safety innovations for the industry.</div>
+              <span class="faculty-badge"><i class="fas fa-utensils"></i> FDT</span>
+            </div>
+          </div>
+          <!-- Architecture -->
+          <div class="col-md-6 col-lg-4 faculty-card-wrapper">
+            <div class="faculty-card">
+              <div class="faculty-icon"><i class="fas fa-drafting-compass"></i></div>
+              <div class="faculty-name">Architecture</div>
+              <div class="faculty-desc">Creative spatial design, sustainable planning & modern construction tech.</div>
+              <span class="faculty-badge"><i class="fas fa-building"></i> ARCH</span>
+            </div>
+          </div>
+          <!-- RAC Technology (Refrigeration & Air Conditioning) -->
+          <div class="col-md-6 col-lg-4 faculty-card-wrapper">
+            <div class="faculty-card">
+              <div class="faculty-icon"><i class="fas fa-wind"></i></div>
+              <div class="faculty-name">RAC Technology</div>
+              <div class="faculty-desc">Refrigeration, HVAC systems, energy efficiency & climate control solutions.</div>
+              <span class="faculty-badge"><i class="fas fa-thermometer-half"></i> RAC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========== END NEW FACULTIES SECTION ========== -->
+
+      <!-- Enhanced calendar widget beside a small teacher preview -->
+      <div class="row mt-4 g-4">
+        <div class="col-md-6">
+          <div class="card card-hover p-3 text-center bg-white h-100">
+            <h5><i class="far fa-calendar-alt text-warning"></i> Academic Calendar</h5>
+            <div id="inlineCalendar" class="mt-2"></div>
+            <p class="text-muted small mt-2">📅 Mid-term: june-7 2026 | Semester Final: august-20 2026</p>
+            <hr class="my-2">
+            <div class="d-flex justify-content-between small text-secondary">
+              <span><i class="far fa-clock"></i> Exam week: 7-12 June</span>
+              <span><i class="fas fa-chalkboard"></i> Summer Break: Aug</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-hover p-3 bg-white h-100">
+            <h5 class="text-center"><i class="fas fa-chalkboard-user text-warning"></i> Faculty Spotlight</h5>
+            <div class="d-flex align-items-center gap-3 mt-2">
+              <!-- Simple teacher preview image placeholder (monogram + icon) -->
+              <div class="bg-light rounded-circle d-flex align-items-center justify-content-center">
+                <img src="image/sabbir.jpg" alt="" style="width: 100px; height: 100px; border-radius: 50px;">
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">Md. Sabbir Hosen</h6>
+                <p class="small text-muted mb-1">Jr. Instructor (CST)</p>
+                <span class="badge bg-warning text-dark">BSc in CSE (PUST)</span>
+                <div class="mt-1"><a href="#" data-page="teacher"
+                    class="nav-link-trigger text-decoration-none small fw-bold">View full profile →</a></div>
+              </div>
+            </div>
+            <p class="small mt-2 text-secondary">Passionate about web technologies, programming fundamentals, and
+              guiding students to become industry-ready engineers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER PAGE - with attractive photo card and 200+ words description -->
+
+    <div id="teacherPage" class="page-section d-none">
+<div class="teachers-container">
+  <!-- simple representation of menu bar with Teacher active (as requested) -->
+  <div class="department-header">
+    <div class="dept-badge"><i class="fas fa-laptop-code"></i>  Faculty of Computer Science & Technology</div>
+    <h1>📚 Meet Our Mentors</h1>
+    <div class="subhead">Computer Department | Thakurgaon Polytechnic Institute</div>
+  </div>
+
+  <div class="card-grid" id="teacherCardsContainer">
+    <!-- Cards will be injected dynamically with JavaScript based on extracted data from the provided link -->
+  </div>
+  <div class="footer-note">
+    <i class="fas fa-chalkboard-user"></i> Dedicated educators shaping future technologists — CST Department
+  </div>
+</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card card-hover border-0 overflow-hidden shadow-sm">
+            <div class="row g-0">
+              <div
+                class="col-md-5 text-center p-4 bg-light d-flex flex-column align-items-center justify-content-center">
+
+                <!-- Photo card: nice instructor image placeholder with initials + icon -->
+                <div class="position-relative">
+                  <div
+                    class="rounded-circle bg-white d-flex align-items-center justify-content-center mx-auto shadow-sm">
+                    <img src="image/sabbir.jpg" alt="" style="height: 150px; width:150px; border-radius: 80px;">
+                  </div>
+                  <span class="badge bg-warning text-dark mt-2 d-inline-block px-3 py-1 rounded-pill">🎓 Mentor</span>
+                </div>
+                <h3 class="mt-3 fw-bold">Md. Sabbir Hosen</h3>
+                <p class="text-muted mb-1"><i class="fas fa-briefcase"></i> Jr. Instructor (CST)</p>
+                <p class="text-muted mb-2"><i class="fas fa-university"></i> Thakurgaon Polytechnic Institute</p>
+                <div class="mt-2" style="color:red">
+                  <span class="badge badge-teacher bg-light border"><i class="fab fa-java"></i><h4 style="color: red;">Java</h4></span>
+                  <span class="badge badge-teacher bg-light border"><i class="fab fa-js"></i><h4 style="color: tomato;">WEB</h4></span>
+                  <span class="badge badge-teacher bg-light border"><i class="fas fa-database"></i><h4 style="color: chocolate;">DBMS</h4></span>
+                </div>
+              </div>
+              <div class="col-md-7 p-4">
+                <div class="d-flex justify-content-between">
+                  <h4 class="fw-bold"><i class="fas fa-address-card text-warning"></i> Teacher Profile</h4>
+                  <i class="fas fa-chalkboard-user fa-2x text-warning opacity-50"></i>
+                </div>
+                <hr>
+                <p><i class="fas fa-user-graduate fa-fw text-warning"></i> <strong>Full Name:</strong> Md. Sabbir Hosen
+                </p>
+                <p><i class="fas fa-id-card fa-fw text-warning"></i> <strong>Designation:</strong> Jr. Instructor
+                  (Computer Science & Technology)</p>
+                <p><i class="fas fa-graduation-cap fa-fw text-warning"></i> <strong>Qualification:</strong> B.Sc. in
+                  Computer Science & Engineering (CSE) from Pabna University of Science and Technology (PUST).</p>
+                <p><i class="fas fa-code fa-fw text-warning"></i> <strong>Expertise:</strong> Web Technologies (MERN),
+                  Data Structures, Algorithms, OOP, and Database Management.</p>
+                <div class="alert alert-light border-start border-4 border-warning mt-3">
+                  <i class="fas fa-quote-left text-warning me-2"></i> <strong>📖 About (200+ words):</strong>
+                  <p class="mt-2 mb-0">Md. Sabbir Hosen is a passionate computer science educator with a strong
+                    foundation in modern software engineering. Graduating with a BSc in CSE from PUST, he specializes in
+                    bridging the gap between theoretical concepts and real-world applications. With over 4 years of
+                    teaching experience at the diploma level, Sabbir believes in project-based learning and encourages
+                    students to build innovative solutions. His technical stack includes Java, Python, JavaScript, and
+                    cloud basics. He has guided multiple student teams to win national tech competitions, including the
+                    "BTEB Innovation Award 2024". Sabbir actively contributes to the departmental curriculum design,
+                    integrating AI awareness and cybersecurity fundamentals into the CST syllabus. His research
+                    interests include web accessibility and educational technology. Outside the classroom, he runs the
+                    "CodeHub" programming club, mentors final-year projects, and organizes hackathons. Sabbir's teaching
+                    philosophy revolves around curiosity, ethics, and lifelong learning. He regularly updates his skills
+                    through MOOCs and industry certifications. Students admire his approachable mentoring style and
+                    clarity in explaining complex algorithms. He also promotes collaborative coding and open-source
+                    contributions among diploma learners. His goal is to produce skilled graduates who can thrive in the
+                    IT industry or pursue higher studies abroad. With a blend of academic rigor and practical insights,
+                    Md. Sabbir Hosen continues to shape the future technologists of Thakurgaon Polytechnic Institute.
+                  </p>
+                </div>
+                <div class="mt-3">
+                  <i class="fas fa-envelope"></i> <strong>Email:</strong> hmdsabbir123@gmail.com &nbsp;|&nbsp;
+                  <i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> /in/sabbir-cst
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUDENT PAGE (unchanged) -->
+    <div id="studentPage" class="page-section d-none">
+      <div class="card card-hover p-4 mx-auto" style="max-width: 700px;">
+        <div class="text-center"><i class="fas fa-users" style="font-size: 3.5rem; color:#1e5a6f;"></i></div>
+        <h2 class="text-center fw-bold mt-2">Student Corner</h2>
+        <hr>
+        <p><i class="fas fa-chart-line text-warning"></i> <strong>Total Enrolled:</strong> 450+ Students (Diploma in
+          CST)</p>
+        <p><i class="fas fa-calendar-alt text-warning"></i> <strong>Academic Sessions:</strong> Evening & Day shift
+          available</p>
+        <p><i class="fas fa-trophy text-warning"></i> <strong>Achievements:</strong> 92% placement record, national
+          project award 2024</p>
+        <p><i class="fas fa-code-branch text-warning"></i> <strong>Clubs:</strong> Programming Club, Robotics Club, IT
+          Business Forum</p>
+        <div class="bg-light p-3 rounded-4 mt-3">
+          <i class="fas fa-graduation-cap"></i> <strong>Upcoming:</strong> Industrial Tour, Hackathon, and Career Fair.
+        </div>
+      </div>
+    </div>
+
+    <!-- ========= COURSE STRUCTURE PAGE ========= -->
+    <div id="coursestructurePage" class="page-section d-none">
+      <div class="card card-hover p-4">
+        <div class="text-center mb-3">
+          <i class="fas fa-book-open" style="font-size: 3rem; color:#1e5a6f;"></i>
+          <h2 class="fw-bold mt-2">📖 Course Structure (Diploma in CST)</h2>
+          <p class="text-muted">4-year diploma program (8 semesters) – Bangladesh Technical Education Board</p>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="fw-bold"><i class="fas fa-layer-group text-warning"></i> Semester 1(Fundamentals)</h5>
+            <ul class="curriculum-list">
+              <li><i class="fas fa-check-circle"></i> Bangla 1 (25711)</li>
+              <li><i class="fas fa-check-circle"></i> English 1 (25712)</li>
+              <li><i class="fas fa-check-circle"></i> 1. Bangla 1 (25711)</li>
+              <li><i class="fas fa-check-circle"></i>English 1 (25712)</li>
+              <li><i class="fas fa-check-circle"></i>Engineering Drawing (21011)</li>
+              <li><i class="fas fa-check-circle"></i>Physics 1 (25912)</li>
+              <li><i class="fas fa-check-circle"></i>Mathematics 1 (25911)</li>
+              <li><i class="fas fa-check-circle"></i>Basic Electricity (26711)</li>
+              <li><i class="fas fa-check-circle"></i>Computer Office Application (26611)</li>
+            </ul>
+            <h5 class="fw-bold mt-4"><i class="fas fa-layer-group text-warning"></i> Semester 2 (Core)</h5>
+            <ul class="curriculum-list">
+             <li><i class="fas fa-check-circle"></i> Bangla 2 (25721)</li>
+              <li><i class="fas fa-check-circle"></i> English 2 (25722)</li>
+              <li><i class="fas fa-check-circle"></i>Mathematics 2 (25921)</li>
+              <li><i class="fas fa-check-circle"></i>Physical Education and Life Skill Development (25812)</li>
+              <li><i class="fas fa-check-circle"></i>Physics 2 (25922)</li>
+              <li><i class="fas fa-check-circle"></i>Computer Graphics Design 1 (26622)</li>
+              <li><i class="fas fa-check-circle"></i>Python Programming (26621)</li>
+              <li><i class="fas fa-check-circle"></i>Basic Electronics (26811)i></li>
+            </ul>
+            <h5 class="fw-bold mt-4"><i class="fas fa-layer-group text-warning"></i> Semester 3 (Specialization &
+              Project)</h5>
+            <ul class="curriculum-list">
+              <li><i class="fas fa-check-circle"></i>Social Science (25811)</li>
+              <li><i class="fas fa-check-circle"></i>Chemistry (25913)</li>
+              <li><i class="fas fa-check-circle"></i>Mathematics 3 (25931)</li>
+              <li><i class="fas fa-check-circle"></i>Digital Electronics 1 (26831)</li>
+              <li><i class="fas fa-check-circle"></i>Application Development Using Python (28531)</li>
+              <li><i class="fas fa-check-circle"></i>Graphics Design 2 (28532)</li>
+              <li><i class="fas fa-check-circle"></i>IT Support Services (28533)</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="fw-bold"><i class="fas fa-layer-group text-warning"></i> Semester 4 (Advanced)</h5>
+            <ul class="curriculum-list">
+              <li><i class="fas fa-check-circle"></i>1. Business Communication (25831)</li>
+              <li><i class="fas fa-check-circle"></i>2. Digital Electronics 2 (26841)</li>
+              <li><i class="fas fa-check-circle"></i>3. Java Programming (28541)</li>
+              <li><i class="fas fa-check-circle"></i>4. Data Structure & Algorithm (28542)</li>
+              <li><i class="fas fa-check-circle"></i>5. Computer Peripherals & Interfacing (28543)</li>
+              <li><i class="fas fa-check-circle"></i>6. Web Design & Development 1 (28544)</li>
+              <li><i class="fas fa-check-circle"></i>7. Environmental Studies (29041)</li>
+            </ul>
+            <h5 class="fw-bold mt-4"><i class="fas fa-layer-group text-warning"></i> Semester 5 (Specialization &
+              Project)</h5>
+            <ul class="curriculum-list">
+              <li><i class="fas fa-check-circle"></i>1. Accounting (25841)</li>
+              <li><i class="fas fa-check-circle"></i>2. Application Development Using Java (28551)</li>
+              <li><i class="fas fa-check-circle"></i>3. Web Design & Development 2 (28552)</li>
+              <li><i class="fas fa-check-circle"></i>4. Computer Architecture & Microprocessor (28553)</li>
+              <li><i class="fas fa-check-circle"></i>5. Data Communication  (28554)</li>
+              <li><i class="fas fa-check-circle"></i>6. Operating System (28555)</li>
+              <li><i class="fas fa-check-circle"></i>7. Project Work 1 (28556)</li>
+            </ul>
+            <h5 class="fw-bold mt-4"><i class="fas fa-layer-group text-warning"></i> Semester 6 (Specialization &
+              Project)</h5>
+            <ul class="curriculum-list">
+              <li><i class="fas fa-check-circle"></i>1. Principles of Marketing (25851)</li>
+              <li><i class="fas fa-check-circle"></i>2. Industrial Management  (25852)</li>
+              <li><i class="fas fa-check-circle"></i>3. Database Management System (28561)</li>
+              <li><i class="fas fa-check-circle"></i>4. Computer Networking (28562)</li>
+              <li><i class="fas fa-check-circle"></i>5. Sensor & IOT System (28563)
+              <li><i class="fas fa-check-circle"></i>6. Microcontroller Based System Design & Development (28564)</li>
+              <li><i class="fas fa-check-circle"></i>7. Surveillance Security System (28565)</li>
+              <li><i class="fas fa-check-circle"></i>8. Web Development Project (28566)</li>
+            </ul>
+            <h5 class="fw-bold mt-4"><i class="fas fa-layer-group text-warning"></i> Semester 7 (Specialization &
+              Project)</h5>
+            <ul class="curriculum-list">
+             <li><i class="fas fa-check-circle"></i>1. Innovation & Entrepreneurship (25853)
+              <li><i class="fas fa-check-circle"></i>2. Digital Marketing Technique (28571)
+              <li><i class="fas fa-check-circle"></i>3. Network Administration & Services (28572)
+              <li><i class="fas fa-check-circle"></i>4. Cyber Security & Ethics (28573)
+              <li><i class="fas fa-check-circle"></i>5. Apps Development Project (28574)
+              <li><i class="fas fa-check-circle"></i>6. Multimedia & Animation  (28575)
+              <li><i class="fas fa-check-circle"></i>7. Project Work 2 (28576)
+            </ul>
+          </div>
+        </div>
+        <div class="alert alert-info mt-3">
+          <i class="fas fa-info-circle"></i> <strong>Note:</strong> Curriculum follows BTEB regulations, elective
+          subjects may vary by semester.
+        </div>
+      </div>
+    </div>
+
+    <!-- ========= SOFTWARE PAGE ========= -->
+    <div id="softwarePage" class="page-section d-none">
+      <div class="card card-hover p-4">
+        <div class="text-center">
+          <i class="fas fa-laptop-code" style="font-size: 3rem; color:#1e5a6f;"></i>
+          <h2 class="fw-bold mt-2">💻 Software & Tools</h2>
+          <p class="text-muted">Essential software used in labs & curriculum</p>
+        </div>
+        <hr>
+        <div class="row g-4 mt-1">
+          <div class="col-md-4">
+            
+            <div class="software-tag bg-white shadow-sm"><i class="fab fa-java"></i>
+              <a href="https://www.java.com/en/download/" style"text-decoration:none; color:gray;">
+                <h5 class="fw-semibold">Java / NetBeans</h5>
+              <p class="small text-secondary">OOP & Advanced Programming</p>
+              </a>
+            </div>
+            
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fas fa-database"></i>
+              <a href="https://www.mysql.com/downloads/" style"text-decoration:none;color:gray;">
+                <h5 class="fw-semibold">MySQL / Oracle</h5>
+              
+              <p class="small text-secondary">Database Management Lab</p>
+                </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fab fa-python"></i>
+              <a href="https://www.python.com/downloads/" style"text-decoration:none; color:gray;">
+                <h5 class="fw-semibold">Python 3.x</h5></a>
+              <p class="small text-secondary">Data Science & Scripting</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fas fa-code"></i>
+              <a href="https://code.visualstudio.com/" style"text-decoration:none; color:gray;">
+                <h5 class="fw-semibold">VS Code / Sublime</h5></a>
+              <p class="small text-secondary">Web Dev & Frontend Tools</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fas fa-network-wired"></i>
+               <a href="https://learningnetwork.cisco.com/s/question/0D53i00000Kt599CAB/download-packet-tracer" style"text-decoration:none; color:gray;">
+                 <h5 class="fw-semibold">Cisco Packet Tracer</h5></a>
+              <p class="small text-secondary">Networking & Simulation</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fab fa-android"></i>
+              <a href="https://developer.android.com/codelabs/basic-android-kotlin-compose-install-android-studio#2" style"text-decoration:none; color:gray;">
+                <h5 class="fw-semibold">Android Studio</h5></a>
+              <p class="small text-secondary">Mobile App Development</p>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fas fa-cloud-upload-alt"></i>
+              <h5 class="fw-semibold">Git & GitHub</h5>
+              <p class="small text-secondary">Version Control</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fas fa-chart-line"></i>
+              <h5 class="fw-semibold">MS Project / LibreOffice</h5>
+              <p class="small text-secondary">Documentation</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="software-tag bg-white shadow-sm"><i class="fas fa-shield-alt"></i>
+              <h5 class="fw-semibold">Wireshark / Kali</h5>
+              <p class="small text-secondary">Cybersecurity Lab</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 p-3 rounded-3 bg-light"><i class="fas fa-download text-warning"></i> <strong>Lab
+            Access:</strong> All software available in CST department labs.</div>
+      </div>
+    </div>
+
+    <!-- CLASS TEST, MIDTERM, SEMESTER, NOTICE PAGES (kept as original but functional) -->
+    <!-- CLASS TEST RESULT PAGE - FIXED VERSION -->
+<div id="classtestPage" class="page-section d-none">
+  <h2 class="fw-bold mb-4"><i class="fas fa-file-pdf text-danger me-2"></i> Class Test Results</h2>
+  <p class="text-muted mb-3">Click on any card to view/download PDF result.</p>
+  <div class="row g-4">
+    
+    <!-- PDF 1 - Using %20 for space in filename -->
+    <div class="col-md-6 col-lg-4">
+      <a href="pdf/data.pdf" class="result-link-card" target="_blank">
+        <div class="card card-hover p-3 text-center h-100">
+          <i class="fas fa-file-pdf fa-3x text-danger"></i>
+          <h5 class="mt-2">Data Communication CT-1</h5>
+          <p class="small text-muted">CST 5th Semester</p>
+          <span class="badge bg-warning text-dark">📄 View PDF</span>
+        </div>
+      </a>
+    </div>
+    
+    <!-- PDF 2 - With proper filename (no spaces) -->
+    <div class="col-md-6 col-lg-4">
+      <a href="image/CLASS_TEST_1.pdf" class="result-link-card" target="_blank">
+        <div class="card card-hover p-3 text-center h-100">
+          <i class="fas fa-file-pdf fa-3x text-danger"></i>
+          <h5 class="mt-2">Web Development CT-2</h5>
+          <p class="small text-muted">Class Test 2</p>
+          <span class="badge bg-warning text-dark">📄 View PDF</span>
+        </div>
+      </a>
+    </div>
+    
+    <!-- PDF 3 - Using encodeURIComponent for special characters -->
+    <div class="col-md-6 col-lg-4">
+      <a href="image/database%20ct%20result.pdf" class="result-link-card" target="_blank">
+        <div class="card card-hover p-3 text-center h-100">
+          <i class="fas fa-file-pdf fa-3x text-danger"></i>
+          <h5 class="mt-2">Database CT-3</h5>
+          <p class="small text-muted">Class Test 3</p>
+          <span class="badge bg-warning text-dark">📄 View PDF</span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+</div>
+    <div id="midtermPage" class="page-section d-none">
+      <h2 class="fw-bold mb-4"><i class="fas fa-file-alt text-danger me-2"></i> Midterm Results</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4"><a href="#" class="result-link-card" target="_blank">
+            <div class="card card-hover p-3 text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i>
+              <h5 class="mt-2">Data Structure Mid</h5><span class="badge bg-primary">PDF</span>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-4"><a href="#" class="result-link-card" target="_blank">
+            <div class="card card-hover p-3 text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i>
+              <h5 class="mt-2">Web Tech Mid</h5><span class="badge bg-primary">PDF</span>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-4"><a href="#" class="result-link-card" target="_blank">
+            <div class="card card-hover p-3 text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i>
+              <h5 class="mt-2">OOP Mid</h5><span class="badge bg-primary">PDF</span>
+            </div>
+          </a></div>
+      </div>
+      <div class="alert alert-secondary mt-4">Update href with real links.</div>
+    </div>
+    <div id="semesterPage" class="page-section d-none">
+      <h2 class="fw-bold mb-4"><i class="fas fa-award text-danger me-2"></i> Semester Results</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4"><a href="#" class="result-link-card" target="_blank">
+            <div class="card card-hover p-3 text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i>
+              <h5 class="mt-2">Semester 1 (CST)</h5><span class="badge bg-success">Final</span>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-4"><a href="#" class="result-link-card" target="_blank">
+            <div class="card card-hover p-3 text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i>
+              <h5 class="mt-2">Semester 2 (DBMS)</h5><span class="badge bg-success">Final</span>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-4"><a href="#" class="result-link-card" target="_blank">
+            <div class="card card-hover p-3 text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i>
+              <h5 class="mt-2">Semester 3 (Networking)</h5><span class="badge bg-success">Final</span>
+            </div>
+          </a></div>
+      </div>
+      <div class="alert alert-warning mt-4">Replace # with actual semester PDF links.</div>
+    </div>
+    <div id="noticePage" class="page-section d-none">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"><i class="fas fa-bullhorn text-warning"></i> Notice Board</h2>
+      </div>
+      <div class="notice-list">
+        <div class="notice-item">
+          <h5 class="fw-bold"><i class="fas fa-check-circle text-success"></i> Midterm Exam Schedule Released</h5>
+          <p>Midterm examinations from 7th June to 12th June 2026. <br><small class="text-muted">Published: 10 April
+              2025</small></p>
+        </div>
+        <div class="notice-item">
+          <h5 class="fw-bold"><i class="fas fa-user-graduate"></i> Semester Final Registration Extended</h5>
+          <p>Last date: 30th May 2025 with late fee.</p><small>Issued: 05 April 2025</small>
+        </div>
+        <div class="notice-item">
+          <h5 class="fw-bold"><i class="fas fa-laptop-code"></i> Web Dev Workshop (MERN Stack)</h5>
+          <p>20-21 April 2025, CST Lab 3</p><small>Posted: 01 April 2025</small>
+        </div>
+      </div>
+      <div class="mt-4 p-3 bg-white border rounded-3"><i class="fas fa-edit text-warning"></i> Admin can add notices
+        manually.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-info mt-5 pt-4 pb-3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h5><i class="fas fa-chalkboard-user me-2"></i> Teacher In-Charge</h5>
+          <div class="footer-teacher mt-2">
+            <p class="mb-1"><strong>👨‍🏫 Name:</strong> Md. Sabbir Hosen</p>
+            <p class="mb-1"><strong>📌 Designation:</strong> Jr. Instructor (CST)</p>
+            <p class="mb-1"><strong>🏛️ Institute:</strong> Thakurgaon Polytechnic Institute</p>
+            <p class="mb-0"><strong>🎓 Qualification:</strong> BSc in CSE (PUST)</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <i class="fas fa-envelope me-1"></i> cst.sabbir@tpi.gov.edu<br>
+          <i class="fas fa-phone-alt"></i> +880 1408 247397<br>
+          <a href="https://www.facebook.com/seikh.binmirza/" style="text-decoration: none;"><i class="fab fa-facebook"style="color: green;"></i>Facebook</a><br>
+          <a><i class="fab fa-instagram-square"></i>Instagram</a><br>
+          <a href="www.youtube.com" style="text-decoration: none;"><i class="fab fa-youtube-square" style="color: red;"></i>YouTube</a><br>
+          <small>© 2026 Thakurgaon Polytechnic Institute</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sections = { home: 'homePage', teacher: 'teacherPage', student: 'studentPage', coursestructure: 'coursestructurePage', software: 'softwarePage', classtest: 'classtestPage', midterm: 'midtermPage', semester: 'semesterPage', notice: 'noticePage' };
+    function showPage(pageId) { Object.values(sections).forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('d-none'); }); document.getElementById(pageId)?.classList.remove('d-none'); document.querySelectorAll('.nav-link').forEach(link => { link.classList.remove('active'); const linkPage = link.getAttribute('data-page'); if (linkPage && sections[linkPage] === pageId) link.classList.add('active'); }); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); const pageKey = link.getAttribute('data-page'); if (pageKey && sections[pageKey]) showPage(sections[pageKey]); }));
+    document.querySelectorAll('.nav-link-trigger').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); const pageKey = btn.getAttribute('data-page'); if (pageKey && sections[pageKey]) showPage(sections[pageKey]); }));
+    showPage('homePage');
+    function generateMiniCalendar() { const container = document.getElementById('inlineCalendar'); if (!container) return; const today = new Date(); const year = today.getFullYear(); const month = today.getMonth(); const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; const firstDay = new Date(year, month, 1).getDay(); const daysInMonth = new Date(year, month + 1, 0).getDate(); let html = `<div class="fw-semibold mb-2">${monthNames[month]} ${year}</div><div class="d-flex justify-content-around small text-secondary mb-1"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div><div class="d-flex flex-wrap justify-content-around">`; let day = 1; for (let i = 0; i < 42; i++) { if (i < firstDay || day > daysInMonth) html += `<span class="text-muted opacity-50" style="width:36px; text-align:center;">-</span>`; else { const isCurrent = (day === today.getDate()); html += `<span class="fw-semibold ${isCurrent ? 'bg-warning rounded-circle text-dark' : ''}" style="width:36px; text-align:center; display:inline-block;">${day}</span>`; day++; } } html += `</div>`; container.innerHTML = html; } generateMiniCalendar();
+ const teachersData = [
+    {
+      name: "সানোয়ার হোসেন অনিক",
+      nameEn: "Sanowar Hossain Anik",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "sanowar235",
+      phoneOffice: "০১৭২৩৩৪৯০৮৯",
+      mobile: "০১৭২৩৩৪৯০৮৯",
+      roomNo: "৩০৩",
+      batch: "BCS (not specified)"
+    },
+    {
+      name: "মোঃ মহি উদ্দিন মাসুম",
+      nameEn: "Mohi Uddin Masum",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "masum.it50",
+      phoneOffice: "০১৭৭৩১১২০৬৯",
+      mobile: "০১৭৭৩১১২০৬৯",
+      roomNo: "৩০৩"
+    },
+    {
+      name: "মোঃ আলমগীর",
+      nameEn: "Md. Alamgir",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "alamgircse13",
+      phoneOffice: "০১৭২৪৩৩৪৮২৮",
+      mobile: "০১৭২৪৩৩৪৮২৮",
+      roomNo: "৩০৩"
+    },
+    {
+      name: "মোছাঃ আরজিনা আক্তার",
+      nameEn: "Arjina Akhtar",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "arzinatpi",
+      phoneOffice: "০১৭১৮৮৬৩৮৪৮",
+      mobile: "০১৭১৮৮৬৩৮৪৮",
+      roomNo: "৩০৪"
+    },
+    {
+      name: "মোঃ রমজান আলী",
+      nameEn: "Md. Ramzan Ali",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "ramjan.duet",
+      phoneOffice: "০১৭৬৭২৭৭৭৬৭",
+      mobile: "০১৭৬৭২৭৭৭৬৭",
+      roomNo: "৩০৪"
+    },
+    {
+      name: "বিকাশ চন্দ্র বর্মন",
+      nameEn: "Bikash Chandra Barman",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "bikash.r24",
+      phoneOffice: "০১৭৪৫২৯৪৭৪৩",
+      mobile: "০১৭৪৫২৯৪৭৪৩",
+      roomNo: "৩০৪"
+    },
+    {
+      name: "মোঃ ফয়সাল ইসলাম",
+      nameEn: "Md. Faysal Islam",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "cse14th",
+      phoneOffice: "০১৭৩৮২৮০৮১৪",
+      mobile: "০১৭৩৮২৮০৮১৪",
+      roomNo: "৩০৪"
+    },
+    {
+      name: "রবিউল ইসলাম",
+      nameEn: "Robiul Islam",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "robiulmrt5s",
+      phoneOffice: "০১৫২১৪৬৯১৬৩",
+      mobile: "০১৫২১৪৬৯১৬৩",
+      roomNo: "৩০৩",
+      phoneType: "বাসা"
+    },
+    {
+      name: "মোঃ সোহরাব হোসেন",
+      nameEn: "Md. Sohrab Hossain",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "mdsohorab521191",
+      phoneOffice: "০১৩০৩৬১৩৪৪০",
+      mobile: "০১৩০৩৬১৩৪৪০",
+      roomNo: "৩০৩"
+    },
+{
+      name: "মোঃসাব্বির হোসেন",
+      nameEn: "MD.Sabbir Hosen",
+      designation: "Jr.Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "sabbir.csts",
+      phoneOffice: "০১৪০৮২৪৭৩৯৭",
+      mobile: "০১৪০৮২৪৭৩৯৭",
+      roomNo: "৩০৩",
+      phoneType: "বাসা"
+    },
+    {
+      name: "শ্রীঃ কৃষ্ণ কান্ত রায়",
+      nameEn: "Krishna Kanto Roy",
+      designation: "Instructor (Computer Technology)",
+      department: "Computer Science & Technology",
+      office: "ঠাকুরগাঁও পলিটেকনিক ইনস্টিটিউট, ঠাকুরগাঁও",
+      emailPrefix: "krishnacst100",
+      phoneOffice: "০১৩৩৫৬৩৫৮৮৩",
+      mobile: "০১৩৩৫৬৩৫৮৮৩",
+      roomNo: "৩০৩"
+    }
+  ];
+
+  // Helper: build full email (since official domain likely @tpi.gov.bd or @polytech.gov.bd but we provide realistic)
+  // we choose standard gov email domain: @polytech.gov.bd but also show prefix clearly
+  function getFullEmail(prefix) {
+    if (!prefix) return '#';
+    // ensure proper format: some have bangla digit? but all ascii
+    return `${prefix}@polytech.gov.bd`;
+  }
+
+  // format phone number for tel link (remove zero-width or unicode digits)
+  function formatTel(phoneStr) {
+    if (!phoneStr) return '#';
+    // Convert Bengali digits to English (if any) – though data uses mostly Bengali digits but hyperlink tel: works better with English digits
+    const bengaliDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+    const englishDigits = ['0','1','2','3','4','5','6','7','8','9'];
+    let formatted = phoneStr;
+    for(let i=0; i<bengaliDigits.length; i++) {
+      formatted = formatted.split(bengaliDigits[i]).join(englishDigits[i]);
+    }
+    // remove any non-digit except '+'
+    formatted = formatted.replace(/[^\d+]/g, '');
+    if(formatted.startsWith('0')) {
+      formatted = '+88' + formatted;  // BD country code assumption
+    } else if (!formatted.startsWith('+')) {
+      formatted = '+88' + formatted;
+    }
+    return formatted;
+  }
+
+  // Create card element
+  function createTeacherCard(teacher, index) {
+    const card = document.createElement('div');
+    card.className = 'teacher-card';
+    card.setAttribute('data-teacher-id', index);
+    
+    const accentDiv = document.createElement('div');
+    accentDiv.className = 'card-accent';
+    
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'card-avatar';
+    avatarDiv.innerHTML = `
+      <div class="avatar-icon">
+        <i class="fas fa-chalkboard-user"></i>
+      </div>
+      <div class="teacher-name">${teacher.name}<br><span style="font-size:0.9rem; font-weight:500; color:#2c6e7e;">${teacher.nameEn}</span></div>
+      <div class="teacher-dept"><i class="fas fa-microchip"></i> ${teacher.department}</div>
+    `;
+    
+    const detailsDiv = document.createElement('div');
+    detailsDiv.className = 'card-details';
+    
+    // office
+    const officeHtml = `
+      <div class="info-row">
+        <i class="fas fa-building"></i>
+        <span>${teacher.office}</span>
+      </div>
+      <div class="info-row">
+        <i class="fas fa-door-open"></i>
+        <span>Room: <span class="badge-room">${teacher.roomNo || '—'}</span></span>
+      </div>
+      <div class="info-row">
+        <i class="fas fa-envelope"></i>
+        <span>Email: <a href="mailto:${getFullEmail(teacher.emailPrefix)}" title="Click to compose">${teacher.emailPrefix}@polytech.gov.bd</a></span>
+      </div>
+    `;
+    
+    // contact row with phone and mobile
+    let contactHtml = `<div class="contact-flex">`;
+    if(teacher.phoneOffice) {
+      const telOffice = formatTel(teacher.phoneOffice);
+      contactHtml += `<div class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:${telOffice}">${teacher.phoneOffice}</a> <span style="font-size:0.65rem;">(Office)</span></div>`;
+    }
+    if(teacher.mobile) {
+      const telMobile = formatTel(teacher.mobile);
+      contactHtml += `<div class="contact-item"><i class="fas fa-mobile-alt"></i> <a href="tel:${telMobile}">${teacher.mobile}</a> <span style="font-size:0.65rem;">(Mobile)</span></div>`;
+    }
+    contactHtml += `</div>`;
+    
+    // add extra info if any
+    let extra = '';
+    if(teacher.batch) {
+      extra = `<div class="info-row"><i class="fas fa-graduation-cap"></i><span>Batch (BCS): ${teacher.batch}</span></div>`;
+    } else {
+      extra = `<div class="info-row"><i class="fas fa-user-graduate"></i><span>BCS Faculty / Experienced</span></div>`;
+    }
+    
+    detailsDiv.innerHTML = officeHtml + extra + contactHtml;
+    card.appendChild(accentDiv);
+    card.appendChild(avatarDiv);
+    card.appendChild(detailsDiv);
+    
+    return card;
+  }
+
+  // Render all cards inside the container
+  function renderCards() {
+    const container = document.getElementById('teacherCardsContainer');
+    if (!container) return;
+    container.innerHTML = ''; // clear loading
+    teachersData.forEach((teacher, idx) => {
+      const card = createTeacherCard(teacher, idx);
+      container.appendChild(card);
+    });
+  }
+
+  renderCards();  
+
+  // --- NEW: Image Slider JavaScript (added without affecting original code) ---
+  (function initSlider() {
+    const sliderImages = document.getElementById('sliderImages');
+    const prevBtn = document.getElementById('prevSlideBtn');
+    const nextBtn = document.getElementById('nextSlideBtn');
+    const dotsContainer = document.getElementById('sliderDots');
+    if (!sliderImages || !prevBtn || !nextBtn || !dotsContainer) return;
+    
+    const slides = document.querySelectorAll('.slider-img');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+    let autoInterval;
+
+    function updateSlider() {
+      sliderImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+      updateDots();
+    }
+    
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) dot.classList.add('active-dot');
+        else dot.classList.remove('active-dot');
+      });
+    }
+    
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active-dot');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateSlider();
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlider();
+    }
+    
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    }
+    
+    function resetAutoSlide() {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(() => {
+        nextSlide();
+      }, 5000);
+    }
+    
+    prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+    nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+    
+    createDots();
+    updateSlider();
+    resetAutoSlide();
+  })();
+</script>
+</body>
+
+</html>
